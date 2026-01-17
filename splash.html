@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Padma Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .character {
+            font-size: 120px;
+            margin-bottom: 30px;
+            animation: charBounce 0.8s ease-out forwards;
+            filter: drop-shadow(0 0 20px rgba(201, 169, 97, 0.6));
+        }
+
+        .splash-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: contain;
+            background-color: transparent;
+            animation: charBounce 0.8s ease-out forwards;
+        }
+
+        @keyframes charBounce {
+            0% {
+                transform: scale(0) translateY(-50px);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1) translateY(10px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .greeting {
+            font-size: 48px;
+            font-family: var(--serif);
+            font-weight: 900;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 20px;
+            min-height: 60px;
+            letter-spacing: 2px;
+        }
+
+        .greeting-text {
+            display: inline-block;
+            animation: fadeInBlink 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInBlink {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 1.5s;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading-dots {
+            font-size: 24px;
+            color: var(--accent);
+            margin-top: 30px;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 2s;
+            opacity: 0;
+        }
+
+        .dot {
+            animation: dotBlink 1.4s infinite;
+            margin: 0 4px;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dotBlink {
+            0%, 60%, 100% {
+                opacity: 0.3;
+            }
+            30% {
+                opacity: 1;
+            }
+        }
+
+        .skip-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 14px;
+            color: var(--muted);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 2.5s;
+        }
+
+        .skip-hint:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-screen" id="splashScreen">
+        <div class="character">
+            <img src="PADMA.JPG.jpg" alt="Padma" class="splash-img"/>
+        </div>
+        <div class="greeting">
+            <span class="greeting-text">Vanakam!</span>
+        </div>
+        <div class="subtitle">Welcome to my portfolio</div>
+        <div class="loading-dots">
+            <span class="dot">.</span>
+            <span class="dot">.</span>
+            <span class="dot">.</span>
+        </div>
+        <div class="skip-hint" id="skipHint">Click to skip</div>
+    </div>
+
+    <script>
+        const splashScreen = document.getElementById('splashScreen');
+        const skipHint = document.getElementById('skipHint');
+
+        // Auto redirect to home after 4 seconds
+        const redirectTimer = setTimeout(() => {
+            redirectToHome();
+        }, 4000);
+
+        // Allow skip on click
+        splashScreen.addEventListener('click', () => {
+            clearTimeout(redirectTimer);
+            redirectToHome();
+        });
+
+        // Allow skip on Enter key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                clearTimeout(redirectTimer);
+                redirectToHome();
+            }
+        });
+
+        function redirectToHome() {
+            splashScreen.style.opacity = '0';
+            splashScreen.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        }
+    </script>
+</body>
+</html>

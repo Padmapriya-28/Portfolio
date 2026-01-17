@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Padma Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio.</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="index.html" style="--i:1">Home</a>
+            <a href="education.html" style="--i:2">Education</a>
+            <a href="projects.html" style="--i:3" class="active">Projects</a>
+            <a href="certificates.html" style="--i:4">Certificates</a>
+            <a href="skills.html" style="--i:5">Skills</a>
+        </nav>
+    </header>
+
+    <section class="contentp">
+        <h1 class="fadeInQuick">Projects</h1>
+        <div class="projects-container">
+            <!-- Repeat this project-card for each project -->
+            <div class="project-card fadeInQuick" style="--delay: 0s">
+                <h2>Rheumatoid Arthiritis Detection using Deep Learning</h2>
+                <p class="timeline">Jul 2025 - Dec 2025</p>
+                <p class="description">An intelligent medical imaging analysis system that uses AI problem-solving techniques to detect and classify the severity of Rheumatoid Arthritis (RA) from uploaded medical images. The system employs explainable AI to provide transparent analysis and recommends appropriate healthcare facilities based on severity classification.</p>
+            </div>
+            
+            <div class="project-card fadeInQuick" style="--delay: 0.2s">
+                <h2>Disease Prediction Using Machine Learning</h2>
+                <p class="timeline">Apr 2025</p>
+                <p class="description"> Built a machine learning model using LightGBM and CatBoost to predict diseases based on multi-symptom user input.</p>
+            </div>
+
+            <div class="project-card fadeInQuick" style="--delay: 0.4s">
+                <h2>College Event Management System</h2>
+                <p class="timeline">Sep 2025</p>
+                <p class="description">Developed a college event management system using DBMS with SQL connectivity to manage event scheduling, participant registration, and data retrieval efficiently.</p>
+            </div>
+            
+            <div class="project-card fadeInQuick" style="--delay: 0.6s">
+                <h2>Analysing of Exam Scores using Descriptive Analysis</h2>
+                <p class="timeline">Sep 2025 - Dec 2025</p>
+                <p class="description">Developed an exam score analysis system using descriptive data analytics techniques in R to summarize, visualize, and interpret student performance.</p>
+            </div>
+            
+            <div class="project-card fadeInQuick" style="--delay: 0.8s">
+                <h2>Fake News Detection using MLT</h2>
+                <p class="timeline">Sep 2024 - Jun 2025</p>
+                <p class="description">Developed a fake news detection system using machine learning techniques to identify and classify misleading or false information accurately.</p>
+            </div>
+
+            <!-- Add more projects in the same format, changing the delay for each card -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the active class
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,795 @@
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Theme variables and overrides */
+:root {
+    --bg: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 50%, #1a1a2e 100%);  /* Metallic dark gradient */
+    --bg-solid: #1a1a2e;      /* Solid fallback */
+    --text: #e8e8f0;          /* Soft white */
+    --accent: #c9a961;        /* Metallic gold */
+    --accent-strong: #a67c4d; /* Metallic bronze */
+    --card: rgba(201, 169, 97, 0.12);  /* Metallic gold tint */
+    --muted: #a0a0b0;         /* Metallic gray */
+    --serif: 'Playfair Display', serif;
+    --sans: 'Inter', sans-serif;
+}
+
+/* Global overrides */
+body { background: var(--bg); background-attachment: fixed; color: var(--text); }
+.header { background: var(--bg-solid); }
+
+/* Nav links */
+.navbar a { color: var(--text); }
+.navbar a:hover,
+.navbar a.active { color: var(--accent); }
+
+/* Social icons */
+.social-media a {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.social-media a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+/* Primary button */
+.download-btn {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+/* Cards and containers */
+.edu-container,
+.project-card,
+.certificates-section { background-color: var(--card); }
+
+/* Education items */
+.edu-item { background-color: var(--accent); color: var(--bg); }
+.edu-item:hover { background: var(--accent-strong); }
+.edu-details { border-color: var(--accent); }
+
+/* Projects */
+.project-card h2 { color: var(--text); }
+.project-card .timeline { color: var(--muted); }
+.project-card .description { color: var(--accent); }
+.project-card .project-link {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.project-card .project-link:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+/* Certificates */
+.certificates-section h2 { color: var(--accent); }
+.certificate-item { background-color: rgba(255,255,255,0.16); }
+.home {
+    /* Desktop balance */
+}
+
+@media (min-width: 992px) {
+    .home {
+        flex-direction: row-reverse;
+    }
+    .home-content { flex: 1 1 55%; }
+    .home-img { flex: 1 1 45%; }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--sans, 'Inter', sans-serif);
+}
+
+body{
+    background: var(--bg);
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a{
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #0ef;
+
+}
+.navbar a.about{
+    color: #0ef;
+}
+
+.navbar a.skills{
+    color: #0ef;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row-reverse; /* Image left, details right */
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10% 60px;
+    gap: 40px;
+}
+
+
+.home-content{
+    max-width: 600px;
+    flex: 1;
+}
+
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--serif, 'Playfair Display', serif);
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span{
+    color: #0ef;
+}
+
+.home-content p{
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h1{
+    font-size: 56px;
+    font-weight: 900;
+    font-family: var(--serif, 'Playfair Display', serif);
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-img{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    border-radius: 50%; /* Makes the image circular */
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 1s;
+    /* Professional frame styling */
+    padding: 8px;
+    background: linear-gradient(135deg, #c9a961 0%, #e8dcc0 50%, #c9a961 100%); /* Metallic gold gradient */
+    box-shadow: 
+        0 0 30px rgba(201, 169, 97, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(201, 169, 97, 0.6);
+    transition: all 0.3s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 40px rgba(201, 169, 97, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover{
+    background: #0ef ;
+    color: #051433;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.download-btn{
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #051433;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+
+
+
+
+@keyframes slideRight{
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom{
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn{
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage{
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.content {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 36px;
+    font-family: var(--serif, 'Playfair Display', serif);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Add this to your existing CSS file */
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+@media (max-width: 790px) {
+    .navbar {
+        display: none; /* Hide the navbar by default on small screens */
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 46, 0.95); /* Metallic dark semi-transparent */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        z-index: 99;
+        transition: all 0.3s ease;
+        border-radius: 8px; /* Rounded corners */
+        padding: 20px 0;
+        border-bottom: 2px solid rgba(201, 169, 97, 0.3); /* Metallic gold border */
+    }
+    
+    .navbar a {
+        padding: 10px 20px; /* Padding for clickable area */
+        margin: 5px 0; /* Space between each link */
+        color: #fff; /* Text color */
+        text-decoration: none; /* Remove underline */
+        text-align: center; /* Center text */
+        transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
+    }
+    
+    .navbar a:hover {
+        background-color: rgba(14, 239, 255, 0.2); /* Light background on hover */
+        border-radius: 4px; /* Rounded corners on hover */
+    }
+    
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+    
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle button on small screens */
+    }
+
+    .home {
+        flex-direction: row-reverse; /* Image left, details right even on mobile */
+        align-items: center;
+        padding: 80px 20px;
+        gap: 20px;
+    }
+
+    .home-content {
+        margin: 20px 0;
+        max-width: 100%; /* Allow full width on mobile */
+        text-align: center; /* Center text content */
+    }
+
+    .home-img {
+        margin: 0;
+        order: 0;
+    }
+
+    .home-img img {
+        max-width: 80%; /* Make the image responsive */
+        border-radius: 50%;
+        height: auto;
+        
+    }
+
+    .div{
+        height: 20px;
+    }
+
+    .certificates-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skills-section{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Add a transition for smoother showing/hiding */
+.navbar a {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+
+/* Existing CSS styles remain unchanged */
+
+/* Education Section Specific Styles */
+.edu-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative; /* Positioning context for the + button */
+}
+
+.edu-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Adjust width as needed */
+    max-width: 600px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the box */
+}
+
+.edu-item {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0ef;
+    color: #051433;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background 0.3s;
+}
+
+.edu-item:hover {
+    background: #0bc;
+}
+
+.edu-details {
+    color: #051433;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #0ef;
+    display: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.add-section {
+    position: absolute;
+    right: 10px; /* Position the + button on the right */
+    top: 10px; /* Adjust top position */
+    font-size: 24px;
+    color: #0ef;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+/* Title animation */
+.fadeInQuick {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Education box animation */
+.slideBottomQuick {
+    opacity: 0;
+    animation: slideBottom 0.6s ease forwards;
+}
+
+/* Individual section animations with shorter duration */
+.slideLeftQuick, .slideRightQuick {
+    opacity: 0;
+    animation: slideLeft 0.6s ease forwards;
+}
+
+/* Set animation delay for each item for a staggered effect */
+.edu-item, .edu-details {
+    opacity: 0;
+    animation-duration: 0.6s;
+}
+
+.edu-item:nth-of-type(1) { animation-delay: 0.5s; }
+.edu-details:nth-of-type(1) { animation-delay: 0.7s; }
+.edu-item:nth-of-type(2) { animation-delay: 1s; }
+.edu-details:nth-of-type(2) { animation-delay: 1.2s; }
+.edu-item:nth-of-type(3) { animation-delay: 1.5s; }
+.edu-details:nth-of-type(3) { animation-delay: 1.7s; }
+
+.fadeInQuick {
+    opacity: 0;  /* Ensures it starts hidden */
+    animation: fadeInQuick 0.6s ease forwards;
+}
+
+@keyframes fadeInQuick {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);  /* Slight upward movement */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* Moves back to original position */
+    }
+}
+
+/* General Styling */
+
+
+.contentp {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Adjust width as needed */
+    max-width: 600px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the box */
+}
+
+.project-card h2 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.project-card .timeline {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.project-card .description {
+    font-size: 1em;
+    color: #0bc;
+    margin-bottom: 15px;
+}
+
+.project-card .project-link {
+    font-size: 0.9em;
+    color: #1a73e8;
+    text-decoration: none;
+    border: 1px solid #1a73e8;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card .project-link:hover {
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+/* Animation */
+@keyframes fadeInQuickp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.certificates-section {
+    flex: 1 1 30%; 
+    margin: 10px; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* .certificates-section {
+    margin: 20px 0;
+    padding: 15px;
+    
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+} */
+
+.certificates-section h2 {
+    font-size: 24px;
+    color: #0ef; /* Use your accent color */
+    margin-bottom: 10px;
+}
+
+.certificate-item {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker background */
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.certificate-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slight hover effect */
+}
+
+.certificate-item h3 {
+    font-size: 20px;
+    color: #ffffff; /* Title color */
+}
+
+.certificate-item .date {
+    font-size: 14px;
+    color: #ccc; /* Date color */
+}
+
+
+
+.certificates-section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+.certificates-section ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for row arrangement */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.certificates-section ul li {
+    margin-bottom: 15px; /* Space between certificate names */
+    padding: 10px; /* Optional: add some padding around the list item */
+    background-color: #051433; /* Optional: background color for the items */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Optional: smooth background color transition */
+}
+
+.certificates-section ul li:hover {
+    background-color: #e0e0e0;
+    color: #051433; /* Optional: change background color on hover */
+}
+
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the sections to wrap onto multiple lines */
+    justify-content: space-between; /* Space between sections */
+}
+
+.contentc {
+    padding: 100px 10%;
+    margin-top: 200px auto;
+    text-align: center;
+}
+
+
+.skills-section {
+    display: flex;
+     /* Stack categories vertically */
+    gap: 30px; /* Space between each skill category */
+    margin-top: 20px; /* Space from the heading */
+}
+
+.skill-category {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Border for categories */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.skill-category h2 {
+    margin-bottom: 10px; /* Space below the heading */
+    font-size: 1.5em; 
+    font-size: 24px;
+    color: #0ef; /* Use your accent color */
+    margin-bottom: 10px;/* Larger heading */
+}
+
+.skill-category ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.skill-category ul li {
+    padding: 5px 0; /* Space between list items */
+    transition: color 0.3s ease;
+    margin-bottom: 15px; /* Space between certificate names */
+    padding: 10px; /* Optional: add some padding around the list item */
+    background-color: #051433; /* Optional: background color for the items */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Smooth color change */
+}
+.skill-category p {
+    padding: 5px 0; /* Space between list items */
+    transition: color 0.3s ease;
+    margin-bottom: 15px; /* Space between certificate names */
+    padding: 10px; /* Optional: add some padding around the list item */
+    background-color: #051433; /* Optional: background color for the items */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Smooth color change */
+}
+
+
+
+.contents {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full viewport height */
+    text-align: center;
+    padding: 20px;
+}
+

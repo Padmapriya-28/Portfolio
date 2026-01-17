@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - Padma Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio.</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html" style="--i:1">Home</a>
+            <a href="education.html" style="--i:2">Education</a>
+            <a href="projects.html" style="--i:3">Projects</a>
+            <a href="certificates.html" style="--i:4" class="active">Certificates</a>
+            <a href="skills.html" style="--i:5">Skills</a>
+        </nav>
+    </header>
+
+    <section class="contentc">
+        <h1>Certificates</h1>
+
+        <div class="certificates-container">
+            <div class="certificates-section fadeInQuick">
+                <h2>Courses</h2>
+                <ul>
+                    <li><strong>AWS SOLUTION ARCHITECT-Associate level</strong> - GLOBAL Certification</li>
+                    <li><strong>Simplilearn</strong> - Python for DataScience, Programming essential, Datascience with python, SQL, Machine Learning Technique, Tableau, Capstone, DataScientist</li>
+                    <li><strong>Machine Learning and Deep Learning Fundamentals and Applications</strong> - NPTEL</li>
+                    <li><strong>Generative AI</strong> - Guvi</li>
+                </ul>
+            </div>
+            
+            <div class="certificates-section fadeInQuick">
+                <h2>Symposium</h2>
+                <ul>
+                    <li><strong>Paper presentation</strong> - Holy cross college</li>
+                    <li><strong>Hackathon</strong> - MAM college of engg</li>
+                </ul>
+            </div>
+
+            <div class="certificates-section fadeInQuick">
+                <h2>Bootcamp</h2>
+                <ul>
+                    <li><strong>Big data Analysis</strong> - KRCT</li>
+                    <li><strong>AI</strong> - Novitech</li>
+                </ul>
+            </div>
+
+            <div class="certificates-section fadeInQuick">
+                <h2>Workshop</h2>
+                <ul>
+                    <li><strong>AI & Data analytics</strong> - SRM TRP</li>
+                    <li><strong>R Program</strong> - KRCT</li>
+                </ul>
+            </div>
+
+            <div class="certificates-section fadeInQuick">
+                <h2>Internship</h2>
+                <ul>
+                    <li><strong>Data Science Intern</strong> - Skillcraft Technology</li>
+                    <li><strong>Data Analyst Intern</strong> - Cognifyz Technology</li>
+                </ul>
+            </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the active class
+        });
+    </script>
+</body>
+</html>
