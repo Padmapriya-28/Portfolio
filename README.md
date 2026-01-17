@@ -4,29 +4,10 @@
   
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](http://linkedin.com/in/padmapriya-s28)
   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/padmapriya-28)
-  [![Portfolio](https://img.shields.io/badge/Portfolio-FF5733?style=for-the-badge&logo=google-chrome&logoColor=white)](#)
 
   A modern, responsive portfolio website showcasing AI/DS projects, skills, education, and professional achievements.
   
 </div>
-
----
-
-## 📌 Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Highlights](#project-highlights)
-- [Skills](#skills)
-- [Installation & Setup](#installation--setup)
-- [Project Structure](#project-structure)
-- [Pages Overview](#pages-overview)
-- [Responsive Design](#responsive-design)
-- [Browser Compatibility](#browser-compatibility)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ---
 
@@ -249,23 +230,6 @@ The portfolio is fully responsive and optimized for all devices:
 | IE 11 | | ⚠️ Limited Support |
 
 ---
-
-## 🤝 Contributing
-
-While this is a personal portfolio, suggestions and feedback are welcome! If you find any issues or have recommendations:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Commit your changes (`git commit -m 'Add improvement'`)
-4. Push to the branch (`git push origin feature/improvement`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE). You are free to use, modify, and distribute this portfolio as a reference or inspiration for your own.
-
 ---
 
 ## 📞 Contact & Social Media
@@ -274,8 +238,7 @@ I'd love to connect! Feel free to reach out through any of the following channel
 
 - **LinkedIn:** [linkedin.com/in/padmapriya-s28](http://linkedin.com/in/padmapriya-s28)
 - **GitHub:** [github.com/padmapriya-28](https://github.com/padmapriya-28)
-- **Email:** [Your Email Here]
-- **Phone:** [Your Phone Here]
+- **Email:** padmapriyasaravanan28@gmail.com
 
 ---
 
@@ -288,18 +251,5 @@ I'd love to connect! Feel free to reach out through any of the following channel
 
 ---
 
-## 📊 Repository Stats
-
-![Views](https://img.shields.io/badge/Views-0-blue)
-![Stars](https://img.shields.io/badge/Stars-0-yellow)
-![Forks](https://img.shields.io/badge/Forks-0-green)
-
----
-
 <div align="center">
-  
-  **Made with ❤️ by Padmapriya S**
-  
-  *Last Updated: January 2026*
-  
 </div>
